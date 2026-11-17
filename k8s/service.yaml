@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tc-fiapx-processing-service
+  namespace: fiapx
+  labels:
+    app: tc-fiapx-processing-service
+spec:
+  selector:
+    app: tc-fiapx-processing-service
+  ports:
+    - name: http
+      port: 8083
+      targetPort: 8083

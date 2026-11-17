@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: processing-service-config
+  namespace: fiapx
+data:
+  DB_URL: jdbc:postgresql://postgres.fiapx.svc.cluster.local:5432/fiapx_processing
+  KAFKA_BOOTSTRAP_SERVERS: kafka.fiapx.svc.cluster.local:9092
+  KAFKA_GROUP_ID: fiapx-processing-group
+  STORAGE_ENDPOINT: http://seaweedfs.fiapx.svc.cluster.local:8333
+  STORAGE_BUCKET: fiapx-videos
+  FFMPEG_BINARY: ffmpeg
+  FFMPEG_FPS: "1"
+  FFMPEG_TIMEOUT_SECONDS: "600"
+  ZIPKIN_ENDPOINT: http://zipkin.fiapx.svc.cluster.local:9411/api/v2/spans
+  DB_POOL_SIZE: "5"
